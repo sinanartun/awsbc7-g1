@@ -30,7 +30,7 @@ def lambda_handler(event, context):
 
     # Predict
     try:
-        trained_model = joblib.load('model-1.pkl')
+        trained_model = joblib.load(LOCAL_MODEL_PATH)
         input_data = np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]])
         fiyat_prediction = trained_model.predict(input_data)
         fiyat = int(np.round(fiyat_prediction[0]))
